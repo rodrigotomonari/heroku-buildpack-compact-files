@@ -9,10 +9,10 @@ if [[ ! -n "${BUILD_DIR}" ]]; then
   exit 1
 fi
 
-if [[ ! -f "${BUILD_DIR}/.slug-pre-clean" ]]; then
-  echo "Could not find .slug-pre-clean file - exiting"
+if [[ ! -f "${BUILD_DIR}/.slug-compact" ]]; then
+  echo "Could not find .slug-compact file - exiting"
   exit 1
 fi
 
-echo "PRE BUILD CLEAN"
+echo "COMPACT BUILD"
 exit 0

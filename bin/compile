@@ -3,7 +3,7 @@
 set -euo pipefail
 
 readonly BUILD_DIR=$1
-readonly CLEAN_FILES=.slug-pre-clean
+readonly COMPACT_FILES=.slug-compact
 
 if [[ ! -n "${BUILD_DIR}" ]]; then
   echo "No build directory specified - exiting"
@@ -12,6 +12,6 @@ fi
 
 cd ${BUILD_DIR}
 
-tar cpf assets.tar public/assets public/packs
+cat COMPACT_FILES | xargs tar cpf compact.tar
 
-rm -R public/assets public/packs
+cat COMPACT_FILES | xargs rm -R

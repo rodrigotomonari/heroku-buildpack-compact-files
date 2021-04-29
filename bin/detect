@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly BUILD_DIR=$1
+
+if [[ ! -n "${BUILD_DIR}" ]]; then
+  echo "No build directory specified - exiting"
+  exit 1
+fi
+
+if [[ ! -f "${BUILD_DIR}/.slug-pre-clean" ]]; then
+  echo "Could not find .slug-pre-clean file - exiting"
+  exit 1
+fi
+
+echo "PRE BUILD CLEAN"
+exit 0

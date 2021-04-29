@@ -12,21 +12,6 @@ fi
 
 cd ${BUILD_DIR}
 
-if [[ ! -f "${CLEAN_FILES}" ]]; then
-  echo "Could not find .slug-pre-clean file - exiting"
-  exit 1
-fi
+tar cpf assets.tar public/assets public/packs
 
-while read file; do
-  [[ ! -n "${file}" ]] && continue
-
-  if [[ -f "${file}" ]]; then
-    echo "Removing file ${file} from slug"
-    rm -f ${file}
-  elif [[ -d "${file}" ]]; then
-    echo "Removing directory ${file} from slug"
-    rm -rf ${file}
-  else
-    echo "Location ${file} not found - ignoring"
-  fi
-done <${CLEAN_FILES}
+rm -R public/assets public/packs

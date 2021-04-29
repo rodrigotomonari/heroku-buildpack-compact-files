@@ -10,7 +10,7 @@ The pre-build-clean buildpack **must** be the first one in the buildpack order:
 
 ```
 # .buildpacks
-https://github.com/Lostmyname/heroku-buildpack-post-build-clean
+https://github.com/rodrigotomonari/heroku-buildpack-pre-build-clean
 https://github.com/heroku/heroku-buildpack-nodejs
 https://github.com/heroku/heroku-buildpack-ruby
 ```

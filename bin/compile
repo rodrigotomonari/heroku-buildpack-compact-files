@@ -13,6 +13,9 @@ fi
 
 cd ${BUILD_DIR}
 
+echo "Compacting and deleting:"
+cat ${COMPACT_FILE}
+
 cat ${COMPACT_FILE} | xargs tar cpf ${OUTPUT_FILE}
 
 cat ${COMPACT_FILE} | xargs rm -R

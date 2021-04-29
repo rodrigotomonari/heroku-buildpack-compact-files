@@ -3,7 +3,8 @@
 set -euo pipefail
 
 readonly BUILD_DIR=$1
-readonly COMPACT_FILES=.slug-compact
+readonly COMPACT_FILE=.slug-compact
+readonly OUTPUT_FILE=compact.tar
 
 if [[ ! -n "${BUILD_DIR}" ]]; then
   echo "No build directory specified - exiting"
@@ -12,6 +13,6 @@ fi
 
 cd ${BUILD_DIR}
 
-cat COMPACT_FILES | xargs tar cpf compact.tar
+cat ${COMPACT_FILE} | xargs tar cpf ${OUTPUT_FILE}
 
-cat COMPACT_FILES | xargs rm -R
+cat ${COMPACT_FILE} | xargs rm -R

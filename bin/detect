@@ -3,13 +3,14 @@
 set -euo pipefail
 
 readonly BUILD_DIR=$1
+readonly COMPACT_FILE=.slug-compact
 
 if [[ ! -n "${BUILD_DIR}" ]]; then
   echo "No build directory specified - exiting"
   exit 1
 fi
 
-if [[ ! -f "${BUILD_DIR}/.slug-compact" ]]; then
+if [[ ! -f "${BUILD_DIR}/${COMPACT_FILE}" ]]; then
   echo "Could not find .slug-compact file - exiting"
   exit 1
 fi
